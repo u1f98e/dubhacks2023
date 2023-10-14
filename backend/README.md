@@ -4,7 +4,7 @@
   - Run `source .venv/bin/activate` to enter the virtual environment
   - In VSCode, do `Ctrl+Shift+P`, type "Select Interpreter", and pick the python3.11 inside the .venv folder you created (`.venv/bin/python3.11`)
 
-- Run `pip install requirements.txt`
+- Run `pip install -r requirements.txt`
 
 ## Running
 
