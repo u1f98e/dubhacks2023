@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
@@ -14,8 +14,13 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 @app.route("/")
-def home():
-    return "<a href=\"api/ui\">Click here for API UI</a>"
+def base():
+    return send_from_directory('../client/public', 'index.html')
+
+# Path for all the static files (compiled JS/CSS, etc.)
+@app.route("/<path:path>")
+def home(path):
+    return send_from_directory('../client/public', path)
 
 if __name__ == "__main__":
     capp.run(host="0.0.0.0", port=8000, debug=True)
