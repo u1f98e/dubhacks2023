@@ -1,0 +1,19 @@
+# swagger.yml
+
+openapi: 3.0.0
+info:
+  title: "Dubhacks2023"
+  description: "please"
+  version: "1.0.0"
+servers:
+  - url: "/api"
+paths:
+  /hello:
+    get:
+      operationId: "hello.hello_world"
+      tags:
+        - "TestTag"
+      summary: "Say hi"
+      responses:
+        "200":
+          description: "print hello wolrd"
