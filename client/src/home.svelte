@@ -1,10 +1,19 @@
 <script>
-    let thing = fetch("https://github.com/u1f98e/dubhacks2023/blob/main/client/src/recipe.html")
+    let thing = 0;
+    function changething()
+   {
+        thing = thing + 1;
+   }
+   function decthing()
+   {
+        thing = thing - 1;
+   }
+    
 </script>
-
 <div class="recipes-title">Profiles you'd like...</div>
 <div class = "container">
-    <button on:click= {() => alert(thing)}>
+    <button on:click = {changething}>
+        
     <div class = "box">
         Jeremy Johannson<br>
         I like spicy food.<br>
@@ -26,6 +35,22 @@
     </div>
     </button>
 </div>
+
+{#if thing > 0}
+        <button on:click = {decthing}>
+            <p>
+                Recipe: boiled water <br>
+                Id: 1234 <br>
+                Description: a nice boiling cup of water. <br>
+                Ingredients: pot, water, stove or other source of heat <br>
+                Instructions: <br>
+                Place water into pot <br> 
+                Place pot on stove <br>
+                Turn stove on <br>
+                Wait until water starts bubbling violently <br>
+            </p>
+        </button>
+{/if}
 
 <style>
     .recipes-title {
