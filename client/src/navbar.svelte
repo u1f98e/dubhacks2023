@@ -11,7 +11,7 @@
     <div align = "right" class="titular"></div>
         <ul class="menu">
                 <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a> | </li>
-                <li><a href="/" on:click|preventDefault={() => (menu = 2)}> About</a></li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 2)}>&nbsp;About</a></li>
         </ul>
 </div>
 
@@ -41,7 +41,7 @@
     .title {
         font-family: 'Helvetica';
         justify-content: left;
-        font-size: 44px;
+        font-size: 34px;
     }
 
     .menu {
