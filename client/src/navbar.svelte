@@ -8,22 +8,27 @@
 </script>
 
 <style>
-
 nav {
         background-color: #333;
         color: white;
-        height: 60px;
+        height: 45px;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
     }
 
 a {
     color: white;
+    size: 20px;
 }
 
 ul li {
     display : inline;
     color: white;
 }
-
 </style>
 
  <main>
@@ -31,10 +36,7 @@ ul li {
         <ul id="menu">
             <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a></li>  
             <li><a href="/" on:click|preventDefault={() => (menu = 2)}>About</a></li>
-        </ul>
-        
-
-        
+        </ul>        
     </nav>
  </main>
 
