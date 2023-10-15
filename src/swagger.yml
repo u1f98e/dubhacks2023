@@ -23,6 +23,30 @@ components:
         image_url:
           type: "string"
           description: "User's image url"
+    Recipe:
+      type: "object"
+      required: ["name"]
+      properties:
+        name:
+          type: "string"
+          description: "Recipe's name"
+        user_id:
+          type: "integer"
+          description: "Recipe's user id"
+        description:
+          type: "string"
+          description: "Recipe's description"
+        instructions:
+          type: "string"
+          description: "Recipe's instructions"
+        image_url:
+          type: "string"
+          description: "Recipe's image url"        
+        ingredients:
+          type: "array"
+          items:
+            type: "string"
+            description: "Recipe's ingredients"
 
 paths:
   /user:
@@ -34,6 +58,7 @@ paths:
           description: "Successfully read users"
     post:
       operationId: "src.user.create"
+      summary: "Create new user"
       requestBody:
         description: "User to create"
         required: true
@@ -61,3 +86,57 @@ paths:
           description: "Successfully read user"
         "404":
           description: "User not found"
+  
+  /recipe:
+    get:
+      operationId: "src.recipe.get_recipes"
+      summary: "Get all recipes"
+      responses:
+        "200":
+          description: "Successfully read recipes"
+    post:
+      operationId: "src.recipe.create"
+      summary: "Create new recipe"
+      requestBody:
+        description: "Recipe to create"
+        required: true
+        content:
+          application/json:
+            schema:
+              x-body-name: "recipe"
+              $ref: "#/components/schemas/Recipe"
+      responses:
+        "201":
+          description: "Created recipe"
+  /recipe/{recipe_id}:
+    get:
+      operationId: "src.recipe.get_recipe"
+      summary: "Get recipe by id"
+      parameters:
+        - name: "recipe_id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Successfully read recipe"
+        "404":
+          description: "Recipe not found"
+  /recipe/{ingredient_list}: 
+    get:
+      operationId: "src.recipe.get_recipe_with_ingredients"
+      summary: "Get recipe by ingredients"
+      parameters:
+        - name: "ingredient_list"
+          in: "path"
+          required: true
+          schema:
+            type: "array"
+            items:
+              type: "string"
+      responses:
+        "200":
+          description: "Successfully read recipe"
+        "404":
+          description: "Recipe not found"

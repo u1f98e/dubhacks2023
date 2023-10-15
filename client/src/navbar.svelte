@@ -3,6 +3,8 @@
 
     import Home from "./home.svelte"
     import About from "./about.svelte"
+    import UserMaker from "./userMaker.svelte"
+    import RecipeMaker from "./recipeMaker.svelte"
     export let menu = 1;
 </script>
 
@@ -11,7 +13,9 @@
     <div align = "right" class="titular"></div>
         <ul class="menu">
                 <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a> | </li>
-                <li><a href="/" on:click|preventDefault={() => (menu = 2)}>&nbsp;About</a></li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Create Recipe</a> | </li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 3)}>New User</a> | </li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 4)}>&nbsp;About</a></li>
         </ul>
 </div>
 
@@ -19,6 +23,10 @@
  {#if menu === 1}
             <Home />
         {:else if menu === 2}
+            <RecipeMaker />
+        {:else if menu === 3}
+            <UserMaker />
+        {:else if menu === 4}
             <About />
         {:else}
             <h1>
@@ -42,6 +50,7 @@
         font-family: 'Helvetica';
         justify-content: left;
         font-size: 34px;
+        padding: 10px;
     }
 
     .menu {
@@ -49,7 +58,6 @@
         display: flex;
         justify-content: right;
     }
-
 
     .menu li {
         display: inline;
