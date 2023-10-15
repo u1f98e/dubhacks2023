@@ -1,4 +1,6 @@
 <script>
+    import { onMount } from "svelte";
+
     let thing = 0;
     function changething()
    {
@@ -16,12 +18,17 @@
    {
         thing = 0;
    }
+
+   let recipes = [];
+   onMount(async function() {
+        let response = await fetch("/api/recipe");
+        recipes = await response.json();
+   })
     
 </script>
 <div class="recipes-title">Profiles you'd like...</div>
 <div class = "container">
     <button on:click = {changething}>
-        
     <div class = "box">
         Jeremy Johannson<br>
         I like spicy food.<br>
@@ -42,6 +49,15 @@
         3113,1392,1120
     </div>
     </button>
+
+</div>
+<div class="recipeList">
+{#each recipes as recipe}
+    <div class = "box recipe">
+        {recipe.name}<br>
+        {recipe.description}<br>
+    </div>
+{/each}
 </div>
 
 {#if thing == 1}

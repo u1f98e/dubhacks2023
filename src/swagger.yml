@@ -132,7 +132,9 @@ paths:
           in: "path"
           required: true
           schema:
-            type: "string"
+            type: "array"
+            items:
+              type: "string"
       responses:
         "200":
           description: "Successfully read recipe"

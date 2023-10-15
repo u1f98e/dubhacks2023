@@ -1,5 +1,6 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import mapped_column, Mapped, relationship 
+from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
 from typing import List, Set
 
 from config import db, ma
@@ -10,11 +11,6 @@ recipe_ingredients = db.Table(
 	db.Column("ingredient_id", db.Integer, db.ForeignKey("ingredients.id"), primary_key=True),
 	db.Column("amount", db.String(32))
 )
-# class RecipeIngredients(db.Model):
-# 	__tablename__ = "recipe_ingredients"
-# 	recipe_id = db.Column(db.Integer, ForeignKey("recipe.id"), primary_key=True)
-# 	ingredient_id = db.Column(db.Integer, ForeignKey("ingredients.id"), primary_key=True)
-# 	amount = db.Column(db.String(32))
 
 class Ingredient(db.Model):
 	__tablename__ = "ingredients"
@@ -45,18 +41,23 @@ class User(db.Model):
 
 	recipes: Mapped[List["Recipe"]] = relationship(back_populates="user")
 
+class UserSchema(ma.SQLAlchemyAutoSchema):
+	class Meta:
+		model = User
+		load_instance = True
+		sqla_session = db.session
+		include_relationships = True
+	
+	recipes = ma.Nested("RecipeSchema", many=True, exclude=("user",))
+
 class RecipeSchema(ma.SQLAlchemyAutoSchema):
 	class Meta:
 		model = Recipe
 		load_instance = True
 		sqla_session = db.session
 
+	user = ma.Nested(UserSchema, only=["name"])
+
+
 recipe_schema = RecipeSchema()
-
-class UserSchema(ma.SQLAlchemyAutoSchema):
-	class Meta:
-		model = User
-		load_instance = True
-		sqla_session = db.session
-
 user_schema = UserSchema()

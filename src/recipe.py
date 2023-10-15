@@ -21,6 +21,7 @@ def create(recipe):
 	db.session.commit()
 	return recipe_schema.dump(new_recipe)
 
-def get_recipe_with_ingredients(ingredients):
-	recipes = Recipe.query.filter(Recipe.ingredients.any(ingredient_id=ingredients)).all()
+def get_recipe_with_ingredients(ingredient_list):
+	print(ingredient_list)
+	recipes = Recipe.query.filter(Recipe.ingredient_list.any(Ingredient.name.in_(ingredient_list))).all()
 	return recipe_schema.dump(recipes, many=True)
