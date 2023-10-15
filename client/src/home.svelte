@@ -1,3 +1,10 @@
-<h1>
-    I am the main page
-</h1>
+<script>
+    let im = './../CupOWater.jpg';
+</script> 
+
+<re1>
+    
+
+</re1>
+
+<img {im} alt = "Cup of Water"/>
