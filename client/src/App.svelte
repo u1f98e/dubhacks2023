@@ -25,6 +25,8 @@
 <main>
 	<Navbar />
 	<!-- Pages load here -->
+
+	<!-- <img src="../../cupOWater.jpg" alt="cupOWater"/>; -->
 	<Footer />	
 </main>
 

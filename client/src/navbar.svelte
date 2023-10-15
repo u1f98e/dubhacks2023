@@ -7,12 +7,14 @@
 </script>
 
 <div class="header-container">
-    <div class="title">Recipe Maker</div>
+    <div align="left" class="title"> Recipe Maker </div>
+    <div align = "right" class="titular"></div>
         <ul class="menu">
-                <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a></li>  
-                <li><a href="/" on:click|preventDefault={() => (menu = 2)}>About</a></li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a> | </li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 2)}> About</a></li>
         </ul>
 </div>
+
 
  {#if menu === 1}
             <Home />
@@ -31,17 +33,23 @@
         height: 70px;
     }
 
+    .header-container > div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
     .title {
-        padding: 10px;
-        font-size: 40px;
-        font-family: 'Lora';
-        font-weight: 250;
+        font-family: 'Helvetica';
+        justify-content: left;
+        font-size: 44px;
     }
 
     .menu {
         list-style: none;
         display: flex;
+        justify-content: right;
     }
+
 
     .menu li {
         display: inline;
