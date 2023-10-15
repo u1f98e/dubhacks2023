@@ -36,6 +36,6 @@
 
 
 <Navbar />
-<h1> This page has some text</h1>
+<h1> This page has some textt</h1>
 <Footer />
 
