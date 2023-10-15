@@ -4,19 +4,15 @@
 	import Navbar from "./navbar.svelte";
 	import Footer from "./Footer.svelte";
 
-	export let name;
 </script>
-
-<main>
-	
-</main>
 
 <style>
 	main {
-		text-align: center;
+		text-align: left;
 		padding: 1em;
 		max-width: 240px;
-		margin: 0 auto;
+		margin: 0;
+		padding: 0;
 	}
 
 
@@ -34,8 +30,11 @@
 	}
 </style>
 
+<main>
+	<Navbar />
+	<h1> This page has some textt</h1>
+	<Footer />	
+</main>
 
-<Navbar />
-<h1> This page has some textt</h1>
-<Footer />
+
 
