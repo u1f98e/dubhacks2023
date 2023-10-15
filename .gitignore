@@ -2,3 +2,4 @@
 __pycache__
 client/package-lock.json
 client/package.json
+.svelte-kit

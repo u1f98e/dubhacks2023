@@ -1,5 +1,5 @@
 <script>
-    let im = './../CupOWater.jpg';
+    let im = 'dubhack2023/CupOWater.jpg';
 </script> 
 
 <re1>
