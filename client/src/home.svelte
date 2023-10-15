@@ -2,11 +2,19 @@
     let thing = 0;
     function changething()
    {
-        thing = thing + 1;
+        thing = 1;
+   }
+   function inc2()
+   {
+     thing = 2;
+   }
+   function inc3()
+   {
+    thing = 3;
    }
    function decthing()
    {
-        thing = thing - 1;
+        thing = 0;
    }
     
 </script>
@@ -20,14 +28,14 @@
         1234,3564,2111<br>
     </div>
     </button>
-    <button>
+    <button on:click = {inc2}>
     <div class = "box">
         Gordon Freeman<br>
         I enjoy exotic food<br>
         3141,1245,2122<br>
     </div>
     </button>
-    <button>
+    <button on:click = {inc3}>
     <div class = "box">
         Hannibal Lectre<br>
         I want something that pairs with a nice kiante<br>
@@ -36,7 +44,7 @@
     </button>
 </div>
 
-{#if thing > 0}
+{#if thing == 1}
         <button on:click = {decthing}>
             <p>
                 Recipe: boiled water <br>
@@ -48,6 +56,31 @@
                 Place pot on stove <br>
                 Turn stove on <br>
                 Wait until water starts bubbling violently <br>
+            </p>
+        </button>
+{:else if thing == 2}
+        <button on:click={decthing}>
+        <p>
+            Recipe: Steamed Headcrab<br>
+            Id: 3141 <br>
+            Description: A Headcrab steamed to draw out its natural flavor. <br>
+            Ingredients: Headcrab, steamer, water, steamer, seasoning(optional) <br>
+            Instructions: <br>
+            Fill bottom portion of steamer with water. <br>
+            Place Headcrab into top portion of steamer. <br>
+            Steam for 2-4 hours or until Headcrab exterior is soft. <br>
+            Apply seasonings (optional). <br>
+        </p>
+        </button>
+{:else if thing == 3}
+        <button on:click={decthing}>
+            <p>
+                Recipe: Lamb Liver <br>
+                Id: 3113 <br>
+                Description: A young lamb's liver. <br>
+                Ingredients: liver <br>
+                Instructions: <br>
+                Best served raw. <br>
             </p>
         </button>
 {/if}
@@ -72,5 +105,9 @@
         text-align: center;
         font-family: 'Arial, Helvetica, sans-serif';
         color: darksalmon;
+    }
+    p{
+        color:red;
+        font-family:'Wide Latin';
     }
 </style>
