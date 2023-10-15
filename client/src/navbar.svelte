@@ -42,6 +42,7 @@
         font-family: 'Helvetica';
         justify-content: left;
         font-size: 34px;
+        padding: 10px;
     }
 
     .menu {
@@ -49,7 +50,6 @@
         display: flex;
         justify-content: right;
     }
-
 
     .menu li {
         display: inline;
