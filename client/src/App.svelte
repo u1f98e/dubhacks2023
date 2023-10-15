@@ -2,6 +2,7 @@
 	import Home from "./home.svelte";
 	import About from "./about.svelte";
 	import Navbar from "./navbar.svelte";
+	import Footer from "./Footer.svelte";
 
 	export let name;
 </script>
@@ -18,7 +19,6 @@
 		margin: 0 auto;
 	}
 
-	
 
 	h1 {
 		color: #ff3e00;
@@ -36,3 +36,6 @@
 
 
 <Navbar />
+<h1> This page has some text</h1>
+<Footer />
+
