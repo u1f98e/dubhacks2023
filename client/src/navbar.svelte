@@ -6,40 +6,6 @@
     export let menu = 1;
 </script>
 
-<<<<<<< HEAD
-<style>
-nav {
-        background-color: #333;
-        color: white;
-        height: 45px;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-
-    }
-
-a {
-    color: white;
-    size: 20px;
-}
-
-ul li {
-    display : inline;
-    color: white;
-}
-</style>
-
- <main>
-    <nav>
-        <ul id="menu">
-            <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a></li>  
-            <li><a href="/" on:click|preventDefault={() => (menu = 2)}>About</a></li>
-        </ul>        
-    </nav>
- </main>
-=======
 <div class="header-container">
     <div class="title">Recipe Maker</div>
         <ul class="menu">
@@ -47,7 +13,6 @@ ul li {
                 <li><a href="/" on:click|preventDefault={() => (menu = 2)}>About</a></li>
         </ul>
 </div>
->>>>>>> 9683b6350b4458d6261ffc567f367de29dd2ac44
 
  {#if menu === 1}
             <Home />
