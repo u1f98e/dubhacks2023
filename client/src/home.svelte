@@ -3,21 +3,27 @@
 
 <div class="recipes-title">Profiles you'd like...</div>
 <div class = "container">
+    <button>
     <div class = "box">
         Jeremy Johannson<br>
         I like spicy food.<br>
         1234,3564,2111<br>
     </div>
+    </button>
+    <button>
     <div class = "box">
         Gordon Freeman<br>
         I enjoy exotic food<br>
         3141,1245,2122<br>
     </div>
+    </button>
+    <button>
     <div class = "box">
         Hannibal Lectre<br>
         I want something that pairs with a nice kiante<br>
         3113,1392,1120
     </div>
+    </button>
 </div>
 
 <style>
