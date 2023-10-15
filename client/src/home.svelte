@@ -1,4 +1,5 @@
 <script>
+    let thing = fetch()
 </script>
 
 <div class="recipes-title">Profiles you'd like...</div>
