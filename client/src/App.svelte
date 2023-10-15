@@ -15,14 +15,6 @@
 		padding: 0;
 	}
 
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
@@ -32,7 +24,9 @@
 
 <main>
 	<Navbar />
-	<h1> This page has some textt</h1>
+	<!-- Pages load here -->
+
+	<!-- <img src="../../cupOWater.jpg" alt="cupOWater"/>; -->
 	<Footer />	
 </main>
 
