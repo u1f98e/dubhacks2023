@@ -1,10 +1,10 @@
 <script>
-    let thing = fetch()
+    let thing = fetch("https://github.com/u1f98e/dubhacks2023/blob/main/client/src/recipe.html")
 </script>
 
 <div class="recipes-title">Profiles you'd like...</div>
 <div class = "container">
-    <button>
+    <button on:click= {() => alert(thing)}>
     <div class = "box">
         Jeremy Johannson<br>
         I like spicy food.<br>
