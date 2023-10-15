@@ -14,4 +14,6 @@
 
 ## Running
 (In the `backend` folder)
-Run the flask app using `flask --app server run` or `python3 -m flask --app server run`
+Run the flask app using `flask run --debug`
+
+If database updates have happened, run: `python3 run_migration.py`
