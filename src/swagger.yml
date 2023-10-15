@@ -1,0 +1,63 @@
+# swagger.yml
+
+openapi: 3.0.0
+info:
+  title: "Dubhacks2023"
+  description: "please"
+  version: "1.0.0"
+servers:
+  - url: "/api"
+
+components:
+  schemas:
+    User:
+      type: "object"
+      required: ["name"]
+      properties:
+        name: 
+          type: "string"
+          description: "User's name"
+        bio:
+          type: "string"
+          description: "User's bio"
+        image_url:
+          type: "string"
+          description: "User's image url"
+
+paths:
+  /user:
+    get:
+      operationId: "src.user.get_users"
+      summary: "Get all users"
+      responses:
+        "200":
+          description: "Successfully read users"
+    post:
+      operationId: "src.user.create"
+      requestBody:
+        description: "User to create"
+        required: true
+        content:
+          application/json:
+            schema:
+              x-body-name: "user"
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: "Created user"
+  
+  /user/{user_id}:
+    get:
+      operationId: "src.user.get_user"
+      summary: "Get user by id"
+      parameters:
+        - name: "user_id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Successfully read user"
+        "404":
+          description: "User not found"
