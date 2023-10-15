@@ -7,3 +7,15 @@
     Every year, Americans waste about 60 million tons of food per year! This is enough for over 130 billion meals, but instead of feeding our stomachs it feeds the trash can instead.
     RecipeMaker helps users share creative ways to reduce food waste, and filter for meals that can be made with ingredients that already happen to be on hand. 
 </p>
+
+<style>
+    h1 {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    p {
+        padding: 10px;
+        margin: 10px 0;
+    }
+</style>
