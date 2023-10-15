@@ -3,6 +3,7 @@
 
     import Home from "./home.svelte"
     import About from "./about.svelte"
+    import RecipeMaker from "./recipeMaker.svelte"
     export let menu = 1;
 </script>
 
@@ -11,7 +12,8 @@
     <div align = "right" class="titular"></div>
         <ul class="menu">
                 <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a> | </li>
-                <li><a href="/" on:click|preventDefault={() => (menu = 2)}>&nbsp;About</a></li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Create Recipe</a> | </li>
+                <li><a href="/" on:click|preventDefault={() => (menu = 3)}>&nbsp;About</a></li>
         </ul>
 </div>
 
@@ -19,6 +21,8 @@
  {#if menu === 1}
             <Home />
         {:else if menu === 2}
+            <RecipeMaker />
+        {:else if menu === 3}
             <About />
         {:else}
             <h1>
